@@ -18,7 +18,7 @@ function middleware(redirectLocalhost) {
         // Note that we do not keep the port as we are using req.hostname
         // and not req.headers.host. The port number does not really have
         // a meaning in most cloud deployments since they port forward.
-        res.redirect('https://' + req.hostname + req.originalUrl);
+        res.redirect('https://' + req.headers.host + req.originalUrl);
     };
 };
 
